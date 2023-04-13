@@ -24,6 +24,7 @@ class Solution
         }
         return true;
     }
+    //breadth first search
     boolean bfs(int row,boolean vis[],int color[],ArrayList<ArrayList<Integer>>adj) {
         Queue<Pair> q = new LinkedList<>();
         q.add(new Pair(row,1));
@@ -51,6 +52,29 @@ class Solution
                 }
             }
             
+        }
+        return true;
+    }
+    //depth first search
+    boolean dfs(int row,int col,boolean vis[],int color[],ArrayList<ArrayList<Integer>>adj) {
+        
+        color[row] = col;
+        for(int n : adj.get(row)) {
+            if(!vis[n]) {
+                if(col==1) {
+                    vis[n] = true;
+                    if(!dfs(n,2,vis,color,adj))
+                        return false;
+                }
+                else {
+                    vis[n] = true;
+                    if(!dfs(n,1,vis,color,adj))
+                        return false;
+                }
+            }
+            else if(col==color[n]) {
+                return false;
+            }
         }
         return true;
     }
