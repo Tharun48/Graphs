@@ -38,6 +38,7 @@ class Solution {
 		Stack<Integer> stack = new Stack<>();
 		
 		//toposort
+		//O(N+M)
 		topoSort(0,adj,stack,vis);
 	
 		int ans[] = new int[N];
@@ -46,6 +47,7 @@ class Solution {
 		ans[0] = 0;
 		
 		//updating weights
+		//O(N+M)
 		while(!stack.isEmpty()) {
 		    int curNode = stack.peek();
 		    stack.pop();
