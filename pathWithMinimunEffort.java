@@ -23,7 +23,7 @@ class Solution {
         for(int a[] : dist ) {
             Arrays.fill(a,Integer.MAX_VALUE);
         }
-        
+        //{path,row,col}
         q.offer(new Pair(0,0,0));
         
         dist[0][0] = 0;
@@ -53,6 +53,7 @@ class Solution {
                 }
             }
         }
+        //will never be executed
         return 0;
     }
 }
