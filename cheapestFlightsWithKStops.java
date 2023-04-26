@@ -48,8 +48,6 @@ class Solution {
                 }
             }
         }
-        System.out.println(cnt);
-        System.out.println(inner);
         if(dist[dst]==Integer.MAX_VALUE)
             return -1;
         return dist[dst];
