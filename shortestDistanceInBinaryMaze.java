@@ -28,7 +28,7 @@ class Solution {
         }
         
         dist[source[0]][source[1]] = 0;
-        
+        //Queue is sufficient as the distance(equal in all cases) from cell to another cell will be 1.
         Queue<Pair> q = new LinkedList<>();
         q.offer(new Pair(source[0],source[1],0));
         //O(N*4)
